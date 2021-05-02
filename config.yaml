@@ -21,6 +21,46 @@ husband:
     ３２F West
   household_person: 山田　太郎
   legally_domiciled_first: 東京都千代田区飯田橋
+  legally_domiciled_first_pos: [221, 480]
   legally_domiciled_second: ３丁目　４
-  is_banchi_legally_domiciled: false
+  is_banchi_legally_domiciled: true
   head_of_person_of_legally_domiciled: 山田　太郎兵衛
+  father_name: 山田　権左衛門
+  father_name_pos: [221, 410]
+  mother_name: 山田　としこ
+  mother_name_pos: [221, 380]
+
+wife:
+  last_name: 小倉
+  last_name_pos: [420,590]
+  last_name_kana: おぐら
+  last_name_kana_pos: [421,623]
+  first_name: 唯
+  first_name_pos: [502,590]
+  first_name_kana: ゆい
+  first_name_kana_pos: [502,623]
+  birth_year: 1999
+  birth_month: 5
+  birth_day: 21
+  address_first: 群馬県みどり市
+  address_first_pos: [422, 545]
+  address_second: ３丁目　４
+  is_banchi_address: true
+  address_go: １０
+  address_apartment: |
+    ""
+  household_person: 小倉　太郎
+  legally_domiciled_first: 群馬県みどり市
+  legally_domiciled_first_pos: [421, 480]
+  legally_domiciled_second: ３丁目　４
+  is_banchi_legally_domiciled: true
+  head_of_person_of_legally_domiciled: 小倉　パッパ
+  father_name: 小倉　パッパ
+  father_name_pos: [421, 410]
+  mother_name: 小倉　マッマ
+  mother_name_pos: [421, 380]
+
+new_legally_domiciled:
+  is_husband_lastname: true
+  address: 群馬県みどり市
+  is_banchi_address: true
