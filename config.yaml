@@ -61,6 +61,6 @@ wife:
   mother_name_pos: [421, 380]
 
 new_legally_domiciled:
-  is_husband_lastname: true
+  is_husband_lastname: false
   address: 群馬県みどり市
   is_banchi_address: true

@@ -148,6 +148,14 @@ def wife_family_info(cfg, cc):
     cc.drawString(x, y, str(cfg["mother_name"]))
 
 
+def new_new_legally_domiciled(cfg, cc):
+    cc.setFont("ipaexm", 12)
+    if cfg["is_husband_lastname"]:
+        cc.rect(196, 351, 5, 5, fill=True)
+    else:
+        cc.rect(196, 340, 5, 5, fill=True)
+
+
 def main():
     cc = setup()
     cfg = load_config()
@@ -159,6 +167,7 @@ def main():
     wife_address_info(cfg["wife"], cc)
     wife_legally_domiciled_info(cfg["wife"], cc)
     wife_family_info(cfg["wife"], cc)
+    new_new_legally_domiciled(cfg["new_legally_domiciled"], cc)
     cc.showPage()
     cc.save()
 
