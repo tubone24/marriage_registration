@@ -1,0 +1,26 @@
+husband:
+  last_name: 山田
+  last_name_pos: [220,590]
+  last_name_kana: やまだ
+  last_name_kana_pos: [221,623]
+  first_name: 太郎
+  first_name_pos: [300,590]
+  first_name_kana: たろう
+  first_name_kana_pos: [305,623]
+  birth_year: 1999
+  birth_month: 5
+  birth_day: 21
+  address_first: 東京都千代田区飯田橋
+  address_first_pos: [221, 545]
+  address_second: ３丁目　４
+  is_banchi_address: false
+  address_go: １０
+  address_apartment: |
+    ガーデンエアー
+    タワー
+    ３２F West
+  household_person: 山田　太郎
+  legally_domiciled_first: 東京都千代田区飯田橋
+  legally_domiciled_second: ３丁目　４
+  is_banchi_legally_domiciled: false
+  head_of_person_of_legally_domiciled: 山田　太郎兵衛
