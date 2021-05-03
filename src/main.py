@@ -151,6 +151,7 @@ def wife_family_info(cfg, cc):
     x, y = cfg["mother_name_pos"]
     cc.drawString(x, y, str(cfg["mother_name"]))
     cc.drawString(551, 385, str(cfg["relationship"]))
+    return cc
 
 
 def new_legally_domiciled(cfg, cc):
@@ -195,6 +196,7 @@ def husband_marital_history_info(cfg, cc):
         cc.drawString(301, 289, str(cfg["year"]))
         cc.drawString(338, 289, str(cfg["month"]))
         cc.drawString(365, 289, str(cfg["day"]))
+    return cc
 
 
 def wife_marital_history_info(cfg, cc):
@@ -278,6 +280,7 @@ def other_info(cfg, cc):
     for text in cfg["text"].split("\n"):
         cc.drawString(x+130, y, text)
         y -= 15
+    return cc
 
 
 def main():
