@@ -1,3 +1,9 @@
+notification:
+  year: 3
+  month: 5
+  day: 5
+  to: 東京都豊島区
+
 husband:
   last_name: 山田
   last_name_pos: [220,590]
@@ -7,18 +13,18 @@ husband:
   first_name_pos: [300,590]
   first_name_kana: たろう
   first_name_kana_pos: [305,623]
-  birth_year: 1999
-  birth_month: 5
-  birth_day: 21
-  address_first: 東京都千代田区飯田橋
+  birth_year: 平成５
+  birth_month: ５
+  birth_day: ２１
+  address_first: 東京都千代田区神田
   address_first_pos: [221, 545]
   address_second: ３丁目　４
   is_banchi_address: false
   address_go: １０
-  address_apartment: |
-    ガーデンエアー
-    タワー
-    ３２F West
+  address_apartment: | # 3行までであれば崩れず表現できます
+    インチキタワー
+    マンション
+    ３６１０号室
   household_person: 山田　太郎
   legally_domiciled_first: 東京都千代田区飯田橋
   legally_domiciled_first_pos: [221, 480]
@@ -29,6 +35,13 @@ husband:
   father_name_pos: [221, 410]
   mother_name: 山田　としこ
   mother_name_pos: [221, 380]
+  relationship: 長
+  marital_history:
+    marriage_cat: 2 # 0: 初婚 1:死別 2:離別
+    year: 令和3
+    month: 6
+    day: 1
+  job_type: 6
 
 wife:
   last_name: 小倉
@@ -39,9 +52,9 @@ wife:
   first_name_pos: [502,590]
   first_name_kana: ゆい
   first_name_kana_pos: [502,623]
-  birth_year: 1999
-  birth_month: 5
-  birth_day: 21
+  birth_year: 平成7
+  birth_month: 8
+  birth_day: 15
   address_first: 群馬県みどり市
   address_first_pos: [422, 545]
   address_second: ３丁目　４
@@ -49,7 +62,7 @@ wife:
   address_go: １０
   address_apartment: |
     ""
-  household_person: 小倉　太郎
+  household_person: 小倉　パッパ
   legally_domiciled_first: 群馬県みどり市
   legally_domiciled_first_pos: [421, 480]
   legally_domiciled_second: ３丁目　４
@@ -59,8 +72,29 @@ wife:
   father_name_pos: [421, 410]
   mother_name: 小倉　マッマ
   mother_name_pos: [421, 380]
+  relationship: 長
+  marital_history:
+    marriage_cat: 0 # 0: 初婚 1:死別 2:離別
+    year: 令和３
+    month: ６
+    day: １
+  job_type: 4
 
 new_legally_domiciled:
-  is_husband_lastname: false
-  address: 群馬県みどり市
-  is_banchi_address: true
+  is_husband_lastname: true
+  address: 群馬県みどり市あいうえお１丁目３
+  address_pos: [251, 335]
+  is_banchi_address: false
+
+to_live_together:
+  year: 令和3
+  month: 6
+
+national_census: # 国勢調査の年4/1-翌3/31に該当しない場合は記載不要。yearを空白文字""に
+  year: 令和3
+  husband_job: "03"
+  wife_job: "02"
+
+other: # 旧字体<=>新字体の変更などで使用。未成年婚姻のような同意欄の場合は直筆推奨で、必ず捺印を行うこと
+  text: |
+    ""

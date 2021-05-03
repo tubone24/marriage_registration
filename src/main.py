@@ -86,6 +86,7 @@ def husband_family_info(cfg, cc):
     cc.drawString(x, y, str(cfg["father_name"]))
     x, y = cfg["mother_name_pos"]
     cc.drawString(x, y, str(cfg["mother_name"]))
+    cc.drawString(351, 385, str(cfg["relationship"]))
 
 
 def wife_name_info(cfg, cc):
@@ -146,14 +147,134 @@ def wife_family_info(cfg, cc):
     cc.drawString(x, y, str(cfg["father_name"]))
     x, y = cfg["mother_name_pos"]
     cc.drawString(x, y, str(cfg["mother_name"]))
+    cc.drawString(551, 385, str(cfg["relationship"]))
 
 
-def new_new_legally_domiciled(cfg, cc):
+def new_legally_domiciled(cfg, cc):
     cc.setFont("ipaexm", 12)
     if cfg["is_husband_lastname"]:
-        cc.rect(196, 351, 5, 5, fill=True)
+        cc.drawString(194, 351, "✓")
     else:
-        cc.rect(196, 340, 5, 5, fill=True)
+        cc.drawString(194, 340, "✓")
+    cc.setFont("ipaexm", 16)
+    if cfg["address"] != "":
+        x, y = cfg["address_pos"]
+        cc.drawString(x, y, str(cfg["address"]))
+        if cfg["is_banchi_address"]:
+            cc.ellipse(547, 352, 520, 341)
+        else:
+            cc.circle(529, 334, 6)
+    return cc
+
+
+def to_live_together_info(cfg, cc):
+    cc.setFont("ipaexm", 15)
+    cc.drawString(220, 310, str(cfg["year"]))
+    cc.drawString(300, 310, str(cfg["month"]))
+    return cc
+
+
+def husband_marital_history_info(cfg, cc):
+    if cfg["marriage_cat"] == 0:
+        cc.setFont("ipaexm", 12)
+        cc.drawString(196, 290, "✓")
+    elif cfg["marriage_cat"] == 1:
+        cc.setFont("ipaexm", 12)
+        cc.drawString(273, 295, "✓")
+        cc.setFont("ipaexm", 6)
+        cc.drawString(301, 289, str(cfg["year"]))
+        cc.drawString(338, 289, str(cfg["month"]))
+        cc.drawString(365, 289, str(cfg["day"]))
+    else:
+        cc.setFont("ipaexm", 12)
+        cc.drawString(273, 285, "✓")
+        cc.setFont("ipaexm", 6)
+        cc.drawString(301, 289, str(cfg["year"]))
+        cc.drawString(338, 289, str(cfg["month"]))
+        cc.drawString(365, 289, str(cfg["day"]))
+
+
+def wife_marital_history_info(cfg, cc):
+    if cfg["marriage_cat"] == 0:
+        cc.setFont("ipaexm", 12)
+        cc.drawString(398, 290, "✓")
+    elif cfg["marriage_cat"] == 1:
+        cc.setFont("ipaexm", 12)
+        cc.drawString(476, 295, "✓")
+        cc.setFont("ipaexm", 6)
+        cc.drawString(504, 289, str(cfg["year"]))
+        cc.drawString(542, 289, str(cfg["month"]))
+        cc.drawString(569, 289, str(cfg["day"]))
+    else:
+        cc.setFont("ipaexm", 12)
+        cc.drawString(476, 285, "✓")
+        cc.setFont("ipaexm", 6)
+        cc.drawString(504, 289, str(cfg["year"]))
+        cc.drawString(542, 289, str(cfg["month"]))
+        cc.drawString(569, 289, str(cfg["day"]))
+    return cc
+
+
+def husband_job_type(cfg, cc):
+    x, y = 210, 271
+    cc.setFont("ipaexm", 12)
+    if cfg["job_type"] == 1:
+        cc.drawString(x, y, "✓")
+    elif cfg["job_type"] == 2:
+        cc.drawString(x, y-11, "✓")
+    elif cfg["job_type"] == 3:
+        cc.drawString(x, y-21, "✓")
+    elif cfg["job_type"] == 4:
+        cc.drawString(x, y-41, "✓")
+    elif cfg["job_type"] == 5:
+        cc.drawString(x, y-62, "✓")
+    elif cfg["job_type"] == 6:
+        cc.drawString(x, y-72, "✓")
+    return cc
+
+
+def wife_job_type(cfg, cc):
+    x, y = 249, 271
+    cc.setFont("ipaexm", 12)
+    if cfg["job_type"] == 1:
+        cc.drawString(x, y, "✓")
+    elif cfg["job_type"] == 2:
+        cc.drawString(x, y-11, "✓")
+    elif cfg["job_type"] == 3:
+        cc.drawString(x, y-21, "✓")
+    elif cfg["job_type"] == 4:
+        cc.drawString(x, y-41, "✓")
+    elif cfg["job_type"] == 5:
+        cc.drawString(x, y-62, "✓")
+    elif cfg["job_type"] == 6:
+        cc.drawString(x, y-72, "✓")
+    return cc
+
+
+def national_census_info(cfg, cc):
+    cc.setFont("ipaexm", 6)
+    if cfg["year"] != "":
+        cc.drawString(278, 186, cfg["year"])
+        cc.setFont("ipaexm", 16)
+        cc.drawString(258, 168, str(cfg["husband_job"]))
+        cc.drawString(458, 168, str(cfg["wife_job"]))
+    return cc
+
+
+def notification_info(cfg, cc):
+    cc.setFont("ipaexm", 12)
+    cc.drawString(141, 716, str(cfg["year"]))
+    cc.drawString(181, 716, str(cfg["month"]))
+    cc.drawString(210, 716, str(cfg["month"]))
+    cc.drawString(141, 680, str(cfg["to"]))
+
+
+def other_info(cfg, cc):
+    cc.setFont("ipaexm", 12)
+    x, y = 40, 145
+    for text in cfg["text"].split("\n"):
+        cc.drawString(x+130, y, text)
+        y -= 15
 
 
 def main():
@@ -167,7 +288,15 @@ def main():
     wife_address_info(cfg["wife"], cc)
     wife_legally_domiciled_info(cfg["wife"], cc)
     wife_family_info(cfg["wife"], cc)
-    new_new_legally_domiciled(cfg["new_legally_domiciled"], cc)
+    new_legally_domiciled(cfg["new_legally_domiciled"], cc)
+    to_live_together_info(cfg["to_live_together"], cc)
+    husband_marital_history_info(cfg["husband"]["marital_history"], cc)
+    wife_marital_history_info(cfg["wife"]["marital_history"], cc)
+    husband_job_type(cfg["husband"], cc)
+    wife_job_type(cfg["wife"], cc)
+    national_census_info(cfg["national_census"], cc)
+    notification_info(cfg["notification"], cc)
+    other_info(cfg["other"], cc)
     cc.showPage()
     cc.save()
 
