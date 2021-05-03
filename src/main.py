@@ -1,17 +1,20 @@
+import os
+import yaml
+from pathlib import Path
 from reportlab.pdfgen import canvas
-from reportlab.lib.pagesizes import A3, portrait, landscape
+from reportlab.lib.pagesizes import A3, landscape
 from reportlab.pdfbase import pdfmetrics
 from reportlab.pdfbase.ttfonts import TTFont
 from pdfrw import PdfReader
 from pdfrw.buildxobj import pagexobj
 from pdfrw.toreportlab import makerl
-import yaml
 
-TEMPLATE_PDF = "template/tmpl_marriage_registration.pdf"
+base_dir = os.path.dirname(__file__)
+TEMPLATE_PDF = os.path.join(base_dir, "template/tmpl_marriage_registration.pdf")
 RESULT_PDF = "result.pdf"
-CONFIG_PATH = "config.yaml"
-pdfmetrics.registerFont(TTFont("ipaexm", 'fonts/ipaexm.ttf'))
-pdfmetrics.registerFont(TTFont("ipaexg", 'fonts/ipaexg.ttf'))
+CONFIG_PATH = os.path.join(Path(base_dir).resolve().parents[0], "config.yaml")
+pdfmetrics.registerFont(TTFont("ipaexm", os.path.join(base_dir, "fonts/ipaexm.ttf")))
+pdfmetrics.registerFont(TTFont("ipaexg", os.path.join(base_dir, "fonts/ipaexg.ttf")))
 
 
 def setup():
@@ -23,7 +26,7 @@ def setup():
 
 
 def load_config():
-    with open("../config.yaml", encoding="utf-8") as f:
+    with open(CONFIG_PATH, encoding="utf-8") as f:
         cfg = yaml.safe_load(f)
     return cfg
 
