@@ -25,3 +25,29 @@ jobs:
     - name: create marriage registration
       run: |
         python src/main.py
+    - name: release version
+      id: release_version
+      run: |
+        echo ::set-output name=version::$(date "+%Y%m%d_%H%M%S")
+    - name: Create Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: ${{ steps.release_version.outputs.version }}
+        release_name: Release ${{ steps.release_version.outputs.version }}
+        body: |
+          Auto created
+          ${{ github.event.head_commit.message }}
+        draft: false
+        prerelease: false
+    - name: Upload Release Assets
+      uses: actions/upload-release-asset@v1
+      env:
+        GITHUB_TOKEN: ${{ secrets.github_token }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: ./result.pdf
+        asset_name: marriage_registration.pdf
+        asset_content_type: application/pdf
