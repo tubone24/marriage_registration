@@ -2,7 +2,7 @@ notification:
   year: 3
   month: 5
   day: 5
-  to: 東京都豊島区
+  to: 東京都小金井市
 
 husband:
   last_name: 山田
@@ -44,33 +44,33 @@ husband:
   job_type: 6
 
 wife:
-  last_name: 小倉
+  last_name: 貫井
   last_name_pos: [420,590]
-  last_name_kana: おぐら
+  last_name_kana: ぬくい
   last_name_kana_pos: [421,623]
-  first_name: 唯
+  first_name: はゆ
   first_name_pos: [502,590]
-  first_name_kana: ゆい
+  first_name_kana: はゆ
   first_name_kana_pos: [502,623]
   birth_year: 平成7
-  birth_month: 8
-  birth_day: 15
-  address_first: 群馬県みどり市
+  birth_month: 6
+  birth_day: 6
+  address_first: 東京都小金井市貫井北町
   address_first_pos: [422, 545]
   address_second: ３丁目　４
-  is_banchi_address: true
+  is_banchi_address: false
   address_go: １０
   address_apartment: |
     ""
-  household_person: 小倉　パッパ
-  legally_domiciled_first: 群馬県みどり市
+  household_person: 貫井　パッパ
+  legally_domiciled_first: 神奈川県横浜市
   legally_domiciled_first_pos: [421, 480]
   legally_domiciled_second: ３丁目　４
   is_banchi_legally_domiciled: true
-  head_of_person_of_legally_domiciled: 小倉　パッパ
-  father_name: 小倉　パッパ
+  head_of_person_of_legally_domiciled: 貫井　パッパ
+  father_name: 貫井　パッパ
   father_name_pos: [421, 410]
-  mother_name: 小倉　マッマ
+  mother_name: 貫井　はよ
   mother_name_pos: [421, 380]
   relationship: 長
   marital_history:
@@ -82,7 +82,7 @@ wife:
 
 new_legally_domiciled:
   is_husband_lastname: true
-  address: 群馬県みどり市あいうえお１丁目３
+  address: 東京都小金井市貫井北町１丁目１
   address_pos: [251, 335]
   is_banchi_address: false
 
